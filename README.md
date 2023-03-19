@@ -15,4 +15,6 @@ USAGE:
 Copy and paste the contents of the file in an individual worksheet (NOT PART OF A FOLDER) in Snowsight and run.
 
 NOTE:
-This script has been tested a few times in my environment, 
+This script has been tested a few times in my environment and it works well.  Please inspect the temporary tables and the query history to ensure that change tracking was enabled correctly for all objects in outbound shares as needed.
+
+This will only work for first and second level tables.  In other words, if a view is built on top of other views, it will not unravel the tables underneath the second-level view(s) to enable change_tracking.  If the first-level views are built on top of tables, it can enable change_tracking for those tables(second-level) but not levels below.
