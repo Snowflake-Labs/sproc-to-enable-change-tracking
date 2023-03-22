@@ -14,10 +14,11 @@ A few things to keep in mind:
 2.  The database and schema names for the temporary tables and the stored procedure can be changed as needed.
 3.  The tables to store actions for audit purposes have been defined as TEMPORARY.  These can be made permanent tables if need be.  Temporary tables will automatically be dropped if the session is expired or expires.
 4.  The name of the stored procedure can be changed to suit the user's naming standards.
-5.  A try and catch block is only defined for the function alter_table_view.  Best practices are to define it for all actions where we prepare and execute sql statements. I'll be adding these gradually over time.
-6.  Also, the alter_table_view function DOES NOT need two blocks (one for TABLE and the other for VIEW).  I put it in there for testing and debugging.  The ALTER statement can be toggled with one block using the tblview variable between a TABLE and a VIEW.  I'll be changing it over time.
-7.  The javascript variables can be undefined and deleted to optimize memory.  I'll be doing that over time as well.
-8.  To look at all the running statements in the procedure, you can use the role of an ACCOUNTADMIN or any other role that has the privilege to see the query history in Snowsight.  To access query history, click on Activity -> Query History on the left side menu.
+5.  This assumes that the role ACCOUNTADMIN or any other (with which you may be executing these statements) have the privilege to perform all the actions to enable change tracking.  These include DESCRIBE, SELECT, INSERT and ALTER actions on objects referenced in the stored procedure. 
+6.  A try and catch block is only defined for the function alter_table_view.  Best practices are to define it for all actions where we prepare and execute sql statements. I'll be adding these gradually over time.
+7.  Also, the alter_table_view function DOES NOT need two blocks (one for TABLE and the other for VIEW).  I put it in there for testing and debugging.  The ALTER statement can be toggled with one block using the tblview variable between a TABLE and a VIEW.  I'll be changing it over time.
+8.  The javascript variables can be undefined and deleted to optimize memory.  I'll be doing that over time as well.
+9.  To look at all the running statements in the procedure, you can use the role of an ACCOUNTADMIN or any other role that has the privilege to see the query history in Snowsight.  To access query history, click on Activity -> Query History on the left side menu.
 
 USAGE:
 Copy and paste the contents of the file in an individual worksheet (NOT PART OF A FOLDER) in Snowsight and run.
