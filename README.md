@@ -2,9 +2,9 @@
 
 Copyright (c) 2023 Snowflake Inc. All rights reserved.
 
-####################################################################################################### 
+#################################################################################### 
 This code is not part of the Snowflake Service and is governed by the terms in LICENSE.txt, unless expressly agreed to in writing.  Your use of this code is at your own risk, and Snowflake has no obligation to support your use of this code.
-#######################################################################################################
+####################################################################################
 
 
 
