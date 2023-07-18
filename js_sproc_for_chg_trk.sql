@@ -20,8 +20,10 @@ use role accountadmin;
 use warehouse osr;
 
 //create the database to hold all the audit objects
-create database snowflake_sproc;
-create schema sproc;
+create database SHARINGOPS;
+create schema SHARINGOPS_PROVIDER;
+use database SHARINGOPS;
+use schema SHARINGOPS_PROVIDER;
 
 //create temporary tables to hold all the objects for audit purposes
 //if need be the word TEMPORARY can be removed to create permanent tables
